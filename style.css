@@ -105,100 +105,98 @@ header {
 }
 
 /* ---------- MOBILNÁ VERZIA ---------- */
-@supports (height: 100dvh) {
-  @media (max-width: 768px) {
-    html, body {
-      height: 100dvh;              /* správna výška aj na iPhone */
-      width: 100%;
-      overflow: hidden !important; /* úplne zakáže scroll */
-      position: fixed;
-      inset: 0;
-      margin: 0;
-      padding: 0;
-      touch-action: none;
-      overscroll-behavior: none;
-    }
+@media (max-width: 768px) {
+  html, body {
+    height: calc(var(--vh, 1vh) * 100); /* dynamická výška z JS */
+    width: 100%;
+    overflow: hidden !important; /* zakáže scroll */
+    position: fixed;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background-size: cover;
-      background-position: center;
-      padding-top: env(safe-area-inset-top, 0);
-      padding-bottom: env(safe-area-inset-bottom, 0);
-    }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    padding-top: env(safe-area-inset-top, 0);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
 
-    header {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding-top: calc(env(safe-area-inset-top) + 10px);
-    }
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: calc(env(safe-area-inset-top) + 10px);
+  }
 
-    .logo {
-      height: 65px;
-    }
+  .logo {
+    height: 65px;
+  }
 
-    .navbar {
-      display: none;
-    }
+  .navbar {
+    display: none;
+  }
 
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .title {
-      white-space: nowrap;
-      font-size: clamp(36px, 8vw, 60px);
-      color: white;
-      margin: 0;
-      text-align: center;
-      text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
-    }
+  .title {
+    white-space: nowrap;
+    font-size: clamp(36px, 8vw, 60px);
+    color: white;
+    margin: 0;
+    text-align: center;
+    text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+  }
 
-    /* ---------- FOOTER ---------- */
-    .mobile-footer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(0, 0, 0, 0.55);
-      width: 100%;
-      padding-bottom: calc(env(safe-area-inset-bottom) + 25px);
-    }
+  /* ---------- FOOTER ---------- */
+  .mobile-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 100%;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 25px);
+  }
 
-    .footer-text {
-      font-family: "Montserrat-Regular", sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      text-transform: uppercase;
-      color: white;
-      margin-top: 15px;
-      margin-bottom: 25px;
-      letter-spacing: 2px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    }
+  .footer-text {
+    font-family: "Montserrat-Regular", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  }
 
-    .footer-icons {
-      display: flex;
-      justify-content: center;
-      gap: 70px;
-    }
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+  }
 
-    .footer-icons .icon {
-      scale: 240%;
-      color: white;
-      transition: 200ms;
-    }
+  .footer-icons .icon {
+    scale: 240%;
+    color: white;
+    transition: 200ms;
+  }
 
-    .footer-icons .icon:hover {
-      transform: scale(120%);
-    }
+  .footer-icons .icon:hover {
+    transform: scale(120%);
   }
 }
 
