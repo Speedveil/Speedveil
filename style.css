@@ -1,212 +1,157 @@
 @font-face {
-  font-family: "Montserrat";
-  src: url("assets/fonts/Montserrat-Black.woff2") format("woff2"),
-       url("assets/fonts/Montserrat-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
+    font-family: "Montserrat";
+    src: url("assets/fonts/Montserrat-Black.woff2") format("woff2"),
+         url("assets/fonts/Montserrat-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("assets/fonts/Montserrat-BlackItalic.woff2") format("woff2"),
-       url("assets/fonts/Montserrat-BlackItalic.ttf") format("truetype");
-  font-weight: 900;
-  font-style: italic;
+    font-family: "Montserrat";
+    src: url("assets/fonts/Montserrat-BlackItalic.woff2") format("woff2"),
+         url("assets/fonts/Montserrat-BlackItalic.ttf") format("truetype");
+    font-weight: 900;
+    font-style: italic;
 }
-
-@font-face {
-  font-family: "Montserrat-Regular";
-  src: url("assets/fonts/Montserrat-Regular.woff2") format("woff2"),
-       url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
   background-image: url(assets/000024.JPG);
-  background-color: rgba(0, 0, 0, 0.75);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-blend-mode: darken;
-  min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    max-height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-position-y: 25%;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
 }
 
 .title {
-  text-align: center;
-  color: white;
-  font-size: 140px;
-  margin-top: 17%;
-  text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    color: white;
+    font-size: 140px;
+    margin-top: 17%;
+    text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
 }
 
 header {
-  position: fixed;
-  width: 100%;
-  padding: 20px 40px;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 20px 40px;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-  height: 80px;
+    height: 80px;
 }
 
 .navbar {
-  width: 220px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .icon {
-  scale: 200%;
-  color: white;
-  transition: 200ms;
-  text-decoration: none;
+    scale: 200%;
+    color: white;
+    transition: 200ms;
+    text-decoration: none;
 }
 
 .icon:hover {
-  transform: scale(115%);
-  transition: 200ms;
+    transform: scale(115%);
+    transition: 200ms;
 }
 
-.footer-text {
-  font-family: "Montserrat-Regular", sans-serif;
-  font-weight: 400;
-  font-size: 17px;
-  letter-spacing: 1px;
-  color: white;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  margin-top: 35px;
-  margin-bottom: 25px;
+.mobile-icons {
+    display: none;
 }
 
-.mobile-socials {
-  display: none;
-}
 
 @media (max-width: 768px) {
-  html, body {
-    height: calc(var(--vh, 1vh) * 100);
-    overflow: hidden;
-    position: fixed;
-    inset: 0;
-    margin: 0;
-    padding: 0;
-    touch-action: none;
-    overscroll-behavior: none;
-  }
+    html, body {
+        overflow: hidden; 
+        height: 100vh;    
+    }
 
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-  }
+    body {
+        background-size: cover;
+        background-position: center;
+    }
 
-  header {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding-top: calc(env(safe-area-inset-top) + 10px);
-  }
 
-  .logo {
-    height: 65px;
-  }
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+    }
 
-  .navbar {
-    display: none;
-  }
+    .logo {
+        height: 65px;
+        margin: 0 auto; 
+    }
 
-  main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 40px;
-  }
 
-  .title {
-    white-space: nowrap;
-    font-size: clamp(36px, 8vw, 60px);
-    color: white;
-    text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
-  }
+    .navbar {
+        display: none;
+    }
 
-  .mobile-socials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
 
-  .footer-text {
-    font-family: "Montserrat-Regular", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    text-transform: uppercase;
-    color: white;
-    margin-bottom: 25px;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-  }
+    .title {
+        font-size: 60px;
+        margin-top: 65%;
+        text-align: center;
+    }
 
-  .footer-icons {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-  }
 
-  .footer-icons .icon {
-    scale: 230%;
-    color: white;
-    transition: 200ms;
-  }
+    .mobile-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+        margin-top: 120px;
+    }
 
-  .footer-icons .icon:hover {
-    transform: scale(120%);
-  }
+    .mobile-icons .icon {
+        scale: 250%;
+        color: white;
+        transition: 200ms;
+    }
+
+    .mobile-icons .icon:hover {
+        transform: scale(120%);
+    }
 }
 
 @media (max-width: 480px) {
-  .title {
-    font-size: 44px;
-    padding: 0 10px;
-  }
+    .title {
+        font-size: 44px;
+        margin-top: 80%;
+        padding: 0 10px;
+    }
 
-  .logo {
-    height: 55px;
-  }
+    .logo {
+        height: 55px;
+    }
 
-  .footer-icons {
-    gap: 50px;
-  }
+    .mobile-icons {
+        gap: 55px;
+        margin-top: 180px;
+    }
 
-  .footer-text {
-    font-size: 15px;
-    margin-bottom: 30px;
-    letter-spacing: 4px;
-  }
-
-  .footer-icons .icon {
-    scale: 220%;
-  }
+    .mobile-icons .icon {
+        scale: 230%;
+    }
 }
