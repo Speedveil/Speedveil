@@ -1,223 +1,230 @@
+/* ---------- FONTY ---------- */
 @font-face {
-    font-family: "Montserrat";
-    src: url("assets/fonts/Montserrat-Black.woff2") format("woff2"),
-         url("assets/fonts/Montserrat-Black.ttf") format("truetype");
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Black.woff2") format("woff2"),
+       url("assets/fonts/Montserrat-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Montserrat";
-    src: url("assets/fonts/Montserrat-BlackItalic.woff2") format("woff2"),
-         url("assets/fonts/Montserrat-BlackItalic.ttf") format("truetype");
-    font-weight: 900;
-    font-style: italic;
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-BlackItalic.woff2") format("woff2"),
+       url("assets/fonts/Montserrat-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: "Montserrat-Regular";
-    src: url("assets/fonts/Montserrat-Regular.woff2") format("woff2"),
-         url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Montserrat-Regular";
+  src: url("assets/fonts/Montserrat-Regular.woff2") format("woff2"),
+       url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
-
-
+/* ---------- RESET ---------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif,italic;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
+/* ---------- BACKGROUND ---------- */
 body {
   background-image: url(assets/000024.JPG);
-    background-color: rgba(0, 0, 0, 0.75);
-    max-height: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-position-y: 25%;
-    background-repeat: no-repeat;
-    background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.75);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  min-height: 100vh;
 }
 
+/* ---------- PC VERZIA ---------- */
 .title {
-    text-align: center;
-    color: white;
-    font-size: 140px;
-    margin-top: 17%;
-    text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: white;
+  font-size: 140px;
+  margin-top: 17%;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
 }
 
 header {
-    position: fixed;
-    width: 100%;
-    padding: 20px 40px;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  position: fixed;
+  width: 100%;
+  padding: 20px 40px;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    height: 80px;
+  height: 80px;
 }
 
 .navbar {
-    width: 220px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .icon {
-    scale: 200%;
-    color: white;
-    transition: 200ms;
-    text-decoration: none;
+  scale: 200%;
+  color: white;
+  transition: 200ms;
+  text-decoration: none;
 }
 
 .icon:hover {
-    transform: scale(115%);
-    transition: 200ms;
+  transform: scale(115%);
+  transition: 200ms;
 }
 
-.mobile-icons {
-    display: none;
-}
-
+/* ---------- FOOTER TEXT ---------- */
 .footer-text {
-    font-family: "Montserrat-Regular", sans-serif;
-    font-weight: 400;
-    font-size: 17px;
-    letter-spacing: 1px;
-    color: white;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin-top: 35px;
-    margin-bottom: 25px;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin-top: 35px;
+  margin-bottom: 25px;
 }
 
-
-
+/* ---------- SKRYJ FOOTER NA PC ---------- */
 .mobile-footer {
-    display: none; 
+  display: none;
 }
 
-.mobile-footer {
-    display: none; 
-}
-
-@media (max-width: 768px) {
+/* ---------- MOBILNÁ VERZIA ---------- */
+@supports (height: 100dvh) {
+  @media (max-width: 768px) {
     html, body {
-        overflow: hidden;
-        height: 100vh;
+      height: 100dvh;              /* správna výška aj na iPhone */
+      width: 100%;
+      overflow: hidden !important; /* úplne zakáže scroll */
+      position: fixed;
+      inset: 0;
+      margin: 0;
+      padding: 0;
+      touch-action: none;
+      overscroll-behavior: none;
     }
 
     body {
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-size: cover;
+      background-position: center;
+      padding-top: env(safe-area-inset-top, 0);
+      padding-bottom: env(safe-area-inset-bottom, 0);
     }
 
     header {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 15px 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding-top: calc(env(safe-area-inset-top) + 10px);
     }
 
     .logo {
-        height: 65px;
-        margin: 0 auto;
+      height: 65px;
     }
 
     .navbar {
-        display: none;
+      display: none;
     }
 
-
     main {
-        flex: 1; 
-        display: flex;
-        justify-content: center; 
-        align-items: center;     
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .title {
-        font-size: 60px;
-        margin: 0; 
-        text-align: center;
+      white-space: nowrap;
+      font-size: clamp(36px, 8vw, 60px);
+      color: white;
+      margin: 0;
+      text-align: center;
+      text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
     }
 
+    /* ---------- FOOTER ---------- */
     .mobile-footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 100px;
-        background-color: rgba(0, 0, 0, 0.55);
-        width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.55);
+      width: 100%;
+      padding-bottom: calc(env(safe-area-inset-bottom) + 25px);
     }
 
     .footer-text {
-        color: white;
-        font-size: 17px;
-        font-weight: 400;
-        margin-top: 35px;
-        margin-bottom: 25px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      font-family: "Montserrat-Regular", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: white;
+      margin-top: 15px;
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
 
     .footer-icons {
-        display: flex;
-        justify-content: center;
-        gap: 70px;
+      display: flex;
+      justify-content: center;
+      gap: 70px;
     }
 
     .footer-icons .icon {
-        scale: 260%;
-        color: white;
-        transition: 200ms;
+      scale: 240%;
+      color: white;
+      transition: 200ms;
     }
 
     .footer-icons .icon:hover {
-        transform: scale(120%);
+      transform: scale(120%);
     }
+  }
 }
 
+/* ---------- EXTRA MALÉ MOBILY ---------- */
 @media (max-width: 480px) {
-    .title {
-        font-size: 44px;
-        padding: 0 10px;
-    }
+  .title {
+    font-size: 44px;
+    padding: 0 10px;
+  }
 
-    .logo {
-        height: 55px;
-    }
+  .logo {
+    height: 55px;
+  }
 
-    .footer-icons {
-        gap: 60px;
-    }
+  .footer-icons {
+    gap: 60px;
+  }
 
-    .footer-text {
-        font-size: 15px;
-        margin-top: 30px;
-        margin-bottom: 40px;
-        letter-spacing: 6px;
-    }
+  .footer-text {
+    font-size: 15px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    letter-spacing: 6px;
+  }
 
-    .footer-icons .icon {
-        scale: 230%;
-    }
+  .footer-icons .icon {
+    scale: 230%;
+  }
 }
-
-
-
-
