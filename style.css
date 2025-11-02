@@ -1,4 +1,3 @@
-/* ---------- FONTY ---------- */
 @font-face {
   font-family: "Montserrat";
   src: url("assets/fonts/Montserrat-Black.woff2") format("woff2"),
@@ -23,7 +22,6 @@
   font-style: normal;
 }
 
-/* ---------- RESET ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +29,6 @@
   font-family: "Montserrat", sans-serif;
 }
 
-/* ---------- BACKGROUND ---------- */
 body {
   background-image: url(assets/000024.JPG);
   background-color: rgba(0, 0, 0, 0.75);
@@ -42,7 +39,6 @@ body {
   min-height: 100vh;
 }
 
-/* ---------- PC VERZIA ---------- */
 .title {
   text-align: center;
   color: white;
@@ -86,7 +82,6 @@ header {
   transition: 200ms;
 }
 
-/* ---------- FOOTER TEXT ---------- */
 .footer-text {
   font-family: "Montserrat-Regular", sans-serif;
   font-weight: 400;
@@ -99,17 +94,14 @@ header {
   margin-bottom: 25px;
 }
 
-/* ---------- SKRYJ FOOTER NA PC ---------- */
-.mobile-footer {
+.mobile-socials {
   display: none;
 }
 
-/* ---------- MOBILNÁ VERZIA ---------- */
 @media (max-width: 768px) {
   html, body {
-    height: calc(var(--vh, 1vh) * 100); /* dynamická výška z JS */
-    width: 100%;
-    overflow: hidden !important; /* zakáže scroll */
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
     position: fixed;
     inset: 0;
     margin: 0;
@@ -122,10 +114,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-size: cover;
-    background-position: center;
-    padding-top: env(safe-area-inset-top, 0);
-    padding-bottom: env(safe-area-inset-bottom, 0);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   header {
@@ -147,28 +137,25 @@ header {
   main {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    gap: 40px;
   }
 
   .title {
     white-space: nowrap;
     font-size: clamp(36px, 8vw, 60px);
     color: white;
-    margin: 0;
-    text-align: center;
     text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
   }
 
-  /* ---------- FOOTER ---------- */
-  .mobile-footer {
+  .mobile-socials {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.55);
-    width: 100%;
-    padding-bottom: calc(env(safe-area-inset-bottom) + 25px);
+    margin-top: 20px;
   }
 
   .footer-text {
@@ -177,7 +164,6 @@ header {
     font-size: 16px;
     text-transform: uppercase;
     color: white;
-    margin-top: 15px;
     margin-bottom: 25px;
     letter-spacing: 2px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
@@ -186,11 +172,11 @@ header {
   .footer-icons {
     display: flex;
     justify-content: center;
-    gap: 70px;
+    gap: 60px;
   }
 
   .footer-icons .icon {
-    scale: 240%;
+    scale: 230%;
     color: white;
     transition: 200ms;
   }
@@ -200,7 +186,6 @@ header {
   }
 }
 
-/* ---------- EXTRA MALÉ MOBILY ---------- */
 @media (max-width: 480px) {
   .title {
     font-size: 44px;
@@ -212,17 +197,16 @@ header {
   }
 
   .footer-icons {
-    gap: 60px;
+    gap: 50px;
   }
 
   .footer-text {
     font-size: 15px;
-    margin-top: 30px;
-    margin-bottom: 40px;
-    letter-spacing: 6px;
+    margin-bottom: 30px;
+    letter-spacing: 4px;
   }
 
   .footer-icons .icon {
-    scale: 230%;
+    scale: 220%;
   }
 }
