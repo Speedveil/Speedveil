@@ -6,6 +6,14 @@
     <title>SpeedVeil</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+  // Dynamicky fixne výšku pre iPhone Safari
+  function fixVh() {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+  }
+  fixVh();
+  window.addEventListener('resize', fixVh);
+</script>
 <body>
     <header>
         <img class="logo" src="assets/LOGO_SPEEDVEIL_2.png" alt="SpeedVeil Logo">    
