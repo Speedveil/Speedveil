@@ -1,159 +1,192 @@
+/* ---------- FONTY ---------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Black.woff2") format("woff2"),
+       url("assets/fonts/Montserrat-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("assets/fonts/Montserrat-Regular.woff2") format("woff2"),
+       url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ---------- RESET ---------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
+/* ---------- BACKGROUND ---------- */
 body {
-    background-image: url(assets/000024.JPG);
-    background-color: rgba(0, 0, 0, 0.75);
-    max-height: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-position-y: 25%;
-    background-repeat: no-repeat;
-    background-blend-mode: darken;
-    max-width: 100%;
+  background-image: url(assets/000024.JPG);
+  background-color: rgba(0, 0, 0, 0.75);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  min-height: 100vh;
 }
 
+/* ---------- PC VERZIA ---------- */
 .title {
-    text-align: center;
-    color: white;
-    font-size: 140px;
-    margin-top: 20%;
-    text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: white;
+  font-size: 140px;
+  margin-top: 17%;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
 }
 
 header {
-    position: fixed;
-    width: 100%;
-    padding: 20px 40px;
-    top: 0;
-    left: 0;
-    background-color:rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 20px 40px;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    height: 80px;
+  height: 80px;
 }
 
 .navbar {
-    width: 220px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .icon {
-    scale: 200%;
-    color: white;
-    transition: 200ms;
-    text-decoration: none;
+  scale: 200%;
+  color: white;
+  transition: 200ms;
+  text-decoration: none;
 }
 
 .icon:hover {
-    transform: scale(115%);
-    transition: 200ms;
+  transform: scale(115%);
 }
 
-/* RESPONSIVE DESIGN */
-
-@media (max-width: 1279px) {
-    body {
-        background-size: 180%;
-        background-position: top;
-    }
-
-
-    .title {
-        font-size: 110px;
-        margin-top: 25%;
-    }
-    .logo {
-        height: 60px;
-    }
-    .navbar {
-        width: 180px;
-    }
+/* ---------- SOCIAL SECTION SKRYTÁ NA PC ---------- */
+.social-section {
+  display: none;
 }
 
-@media (max-width: 1024px) {
-    body {
-        background-size: 220%;
-        background-position: top;
-    }
-
-
-    .title {
-        font-size: 80px;
-        margin-top: 50%;
-    }
-    .logo {
-        height: 60px;
-    }
-    .navbar {
-        width: 180px;
-    }
-}
-
+/* ---------- MOBILNÁ VERZIA ---------- */
 @media (max-width: 768px) {
-    .icon {
-        scale: 250%;
-        padding-bottom: 15px;
-    }
+  html, body {
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+  }
 
-    body {
-        background-size: 320%;
-        background-position: top;
-    }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Stredí celý obsah vertikálne */
+    align-items: center;      /* Stredí horizontálne */
+    background-size: cover;
+    background-position: center;
+  }
 
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 20px;
-    }
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+  }
 
-    .logo {
-        height: 120px;
-        margin-bottom: 10px;
-    }
+  .logo {
+    height: 65px;
+    margin: 0 auto;
+  }
 
-    .navbar {
-        width: 100%;
-        justify-content: center;
-        gap: 40px;
-    }
+  .navbar {
+    display: none;
+  }
 
-    .title {
-        font-size: 60px;
-        margin-top: 60%;
-    }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* ---------- COMING SOON ---------- */
+  .title {
+    font-size: clamp(48px, 9vw, 64px);
+    color: white;
+    text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+    margin-bottom: 80px; /* väčší odstup od ikoniek */
+  }
+
+  /* ---------- SOCIALS POD TEXTOM ---------- */
+  .social-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0; /* centrálne riadené medzerou hore */
+  }
+
+  .social-text {
+    font-family: "Montserrat-Regular", sans-serif;
+    font-size: 17px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 65px;
+  }
+
+  .social-icons .icon {
+    scale: 240%;
+    color: white;
+    transition: 200ms;
+  }
+
+  .social-icons .icon:hover {
+    transform: scale(120%);
+  }
 }
 
+/* ---------- EXTRA MALÉ MOBILY ---------- */
 @media (max-width: 480px) {
-    .icon {
-        scale: 200%;
-        padding-bottom: 10px;
-    }
-    .logo {
-        height: 80px;
-        margin-bottom: 10px;
-    }
+  .title {
+    font-size: 44px;
+    padding: 0 10px;
+    margin-bottom: 70px; /* stále dosť priestoru pod textom */
+  }
 
-    .title {
-        font-size: 44px;
-        margin-top: 60%;
-    }
+  .logo {
+    height: 55px;
+  }
 
-    .icon {
-        scale: 150%;
-    }
+  .social-icons {
+    gap: 50px;
+  }
 
-    header {
-        padding: 8px 15px;
-    }
+  .social-text {
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+
+  .social-icons .icon {
+    scale: 220%;
+  }
 }
-
