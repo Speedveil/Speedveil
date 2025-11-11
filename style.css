@@ -24,7 +24,7 @@
 }
 
 /* ---------- BACKGROUND ---------- */
-body {
+html,body {
   background-image: url(assets/000024.JPG);
   background-color: rgba(0, 0, 0, 0.75);
   background-size: cover;
@@ -32,6 +32,7 @@ body {
   background-repeat: no-repeat;
   background-blend-mode: darken;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 /* ---------- PC VERZIA ---------- */
@@ -82,6 +83,32 @@ header {
   display: none;
 }
 
+/* ---------- CONTACT TEXT ---------- */
+.contact-text {
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 17px;
+  color: white;
+  margin-top: 150px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  letter-spacing: 0.5px;
+}
+
+/* e-mail má vlastný font a štýl */
+.contact-text a {
+  font-family: "Montserrat", sans-serif;  /* tu je bold verzia */
+  font-weight: 900;                        /* hrubší rez pre kontrast */
+  font-size: 18px;                         /* mierne väčší text */
+  color: #ffff;                          /* tyrkysová pre moderný efekt */
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.contact-text a:hover {
+  color: #ffffffd2;                          /* pri hover biely efekt */
+}
+
+
 /* ---------- MOBILNÁ VERZIA ---------- */
 @media (max-width: 768px) {
   html, body {
@@ -93,10 +120,11 @@ header {
   body {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Stredí celý obsah vertikálne */
-    align-items: center;      /* Stredí horizontálne */
+    justify-content: center; 
+    align-items: center;
     background-size: cover;
     background-position: center;
+    position: relative;
   }
 
   header {
@@ -120,6 +148,9 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    height: 100vh;
+    justify-content: center;
+    position: relative;
   }
 
   /* ---------- COMING SOON ---------- */
@@ -127,15 +158,16 @@ header {
     font-size: clamp(48px, 9vw, 64px);
     color: white;
     text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
-    margin-bottom: 80px; /* väčší odstup od ikoniek */
+    margin-bottom: 0; 
   }
 
-  /* ---------- SOCIALS POD TEXTOM ---------- */
+  /* ---------- SOCIALS NIŽŠIE ---------- */
   .social-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 0; /* centrálne riadené medzerou hore */
+    position: absolute;
+    bottom: 160px; /* ⇦ meníš podľa potreby – väčšie číslo = nižšie */
   }
 
   .social-text {
@@ -151,11 +183,11 @@ header {
   .social-icons {
     display: flex;
     justify-content: center;
-    gap: 65px;
+    gap: 55px;
   }
 
   .social-icons .icon {
-    scale: 240%;
+    scale: 220%;
     color: white;
     transition: 200ms;
   }
@@ -163,30 +195,20 @@ header {
   .social-icons .icon:hover {
     transform: scale(120%);
   }
-}
 
-/* ---------- EXTRA MALÉ MOBILY ---------- */
-@media (max-width: 480px) {
-  .title {
-    font-size: 44px;
-    padding: 0 10px;
-    margin-bottom: 70px; /* stále dosť priestoru pod textom */
+  /* ---------- CONTACT TEXT NA SPODKU ---------- */
+  .contact-text {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 17px;
+    margin-top: 0;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
   }
 
-  .logo {
-    height: 55px;
-  }
 
-  .social-icons {
-    gap: 50px;
-  }
-
-  .social-text {
-    font-size: 15px;
-    letter-spacing: 3px;
-  }
-
-  .social-icons .icon {
-    scale: 220%;
-  }
 }
